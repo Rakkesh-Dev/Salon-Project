@@ -1,4 +1,4 @@
-export default function Topbar() {
+export default function Topbar({ onAddBill }) {
   return (
     <header
       style={{
@@ -16,7 +16,7 @@ export default function Topbar() {
       <div style={{ display: "flex", gap: "16px" }}>
         <span>WhatsApp</span>
         <span>Chat</span>
-        <button>Add Bill</button>
+        <button onClick={onAddBill}>Add Bill</button>
         <span>🔔</span>
         <span>👤</span>
       </div>

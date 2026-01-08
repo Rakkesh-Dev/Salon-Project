@@ -1,25 +1,21 @@
-export default function Topbar({ onAddBill }) {
-  return (
-    <header
-      style={{
-        height: "60px",
-        backgroundColor: "#ffffff",
-        borderBottom: "1px solid #e5e7eb",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        padding: "0 20px",
-      }}
-    >
-      <strong>Dashboard</strong>
+import React, { useState } from "react";
+import AddBillModal from "../Modals/AddBillModal";
 
-      <div style={{ display: "flex", gap: "16px" }}>
-        <span>WhatsApp</span>
-        <span>Chat</span>
-        <button onClick={onAddBill}>Add Bill</button>
-        <span>🔔</span>
-        <span>👤</span>
-      </div>
-    </header>
+export default function Topbar() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <header className="topbar">
+        <div className="topbar-actions">
+          <button className="btn-primary" onClick={() => setOpen(true)}>
+            Add Bill
+          </button>
+          <div className="avatar">P</div>
+        </div>
+      </header>
+
+      {open && <AddBillModal onClose={() => setOpen(false)} />}
+    </>
   );
 }

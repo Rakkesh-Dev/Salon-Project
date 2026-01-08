@@ -1,0 +1,292 @@
+:root {
+  --accent-primary: #ff4d00;
+  --accent-primary-hover: #ff783d;
+
+  --neutral-primary: #ffffff;
+  --neutral-secondary: #f5f6fa;
+  --neutral-inverse: #000000;
+
+  --accent-a10: rgba(255, 77, 0, 0.1);
+  --accent-a20: rgba(255, 77, 0, 0.3);
+  --accent-a30: rgba(255, 77, 0, 0.4);
+  --accent-a40: rgba(255, 77, 0, 0.5);
+  --accent-a50: rgba(255, 77, 0, 0.6);
+  --accent-a60: rgba(255, 77, 0, 0.7);
+  --accent-a70: rgba(255, 77, 0, 0.8);
+  --accent-a80: rgba(255, 77, 0, 0.9);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  background-color: var(--neutral-secondary);
+  color: var(--neutral-inverse);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  padding: 16px;
+  overflow-y: auto;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 240px;
+  background: var(--neutral-primary);
+  border-right: 1px solid #e5e5e5;
+  padding: 16px;
+}
+
+.sidebar-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent-primary);
+  margin-bottom: 24px;
+}
+
+.nav-item {
+  width: 100%;
+  padding: 10px 12px;
+  background: none;
+  border: none;
+  text-align: left;
+  color: var(--neutral-inverse);
+  border-radius: 6px;
+  margin-bottom: 4px;
+}
+
+.nav-item:hover {
+  background: var(--accent-a10);
+}
+
+.nav-item.active {
+  background: var(--accent-a20);
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+/* TOPBAR */
+.topbar {
+  height: 56px;
+  background: var(--neutral-primary);
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 16px;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-primary {
+  background: var(--accent-primary);
+  color: #ffffff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+
+.btn-primary:hover {
+  background: var(--accent-primary-hover);
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  background: var(--accent-primary);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+/* CARDS */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--neutral-primary);
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.card-title {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.card-value {
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+/* TABLE */
+.table {
+  width: 100%;
+  background: var(--neutral-primary);
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.table th {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  width: 90%;
+  max-width: 900px;
+  padding: 16px;
+  border-radius: 8px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal section {
+  margin-bottom: 16px;
+}
+
+.modal input {
+  padding: 8px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.row span {
+  min-width: 80px;
+}
+
+.totals {
+  border-top: 1px solid #eee;
+  padding-top: 12px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* LOGIN */
+.login-wrapper {
+  height: 100vh;
+  background: var(--neutral-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  background: var(--neutral-primary);
+  padding: 32px;
+  width: 320px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.login-card h2 {
+  margin-bottom: 8px;
+}
+
+.login-card input,
+.login-card select {
+  padding: 10px;
+}
+
+.tab-bar {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.tab {
+  padding: 8px 14px;
+  background: #f5f6fa;
+  border: none;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #ff4d00;
+  color: white;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+input,
+select {
+  padding: 8px;
+  width: 100%;
+}
+
+.btn-primary {
+  background: #ff4d00;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+}
